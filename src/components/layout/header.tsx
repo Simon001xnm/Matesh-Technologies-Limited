@@ -15,17 +15,16 @@ const mainNavItems: NavItem[] = [
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 max-w-screen-2xl items-center">
+      <div className="container flex h-24 max-w-screen-2xl items-center"> {/* Adjusted height for larger logo */}
         <MobileNav mainNavItems={mainNavItems} />
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Image 
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-XbLRyutGuhzXVlWYm2gppY3nmShsDtXkHqxJsl41HxvEBlznLXeHDBBBGQIKl9tZry0&usqp=CAU" 
             alt="Matesh Tech Logo" 
-            width={40} 
-            height={40} 
-            className="h-10 w-auto" // Ensures height is applied, width adjusts automatically
+            width={80} 
+            height={80} 
+            className="h-20 w-auto" // Ensures height is applied, width adjusts automatically
           />
-          {/* <span className="font-bold sm:inline-block text-xl">Matesh Tech</span> */}
         </Link>
         <MainNav items={mainNavItems} />
         <div className="flex flex-1 items-center justify-end space-x-1 md:space-x-2">
