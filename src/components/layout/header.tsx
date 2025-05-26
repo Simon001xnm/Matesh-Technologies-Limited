@@ -18,7 +18,13 @@ export function Header() {
       <div className="container flex h-16 max-w-screen-2xl items-center">
         <MobileNav mainNavItems={mainNavItems} />
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Image src="/logo.png" alt="Matesh Tech Logo" width={36} height={36} className="h-9 w-auto" />
+          <Image 
+            src="/logo.png" 
+            alt="Matesh Tech Logo" 
+            width={36} 
+            height={36} 
+            className="h-9 w-auto" // Ensure this class doesn't conflict
+          />
           <span className="font-bold sm:inline-block text-xl">Matesh Tech</span>
         </Link>
         <MainNav items={mainNavItems} />

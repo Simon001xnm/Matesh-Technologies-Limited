@@ -9,7 +9,13 @@ export default function SignupPage() {
       <Card className="w-full max-w-md shadow-xl">
         <CardHeader className="text-center">
            <Link href="/" className="inline-block mb-4">
-            <Image src="/logo.png" alt="Matesh Tech Logo" width={40} height={40} className="h-10 w-auto mx-auto" />
+            <Image 
+              src="/logo.png" 
+              alt="Matesh Tech Logo" 
+              width={40} 
+              height={40} 
+              className="h-10 w-auto mx-auto" // Ensure this class doesn't conflict
+            />
           </Link>
           <CardTitle className="text-2xl font-bold">Create an Account</CardTitle>
           <CardDescription>Join Matesh Technologies to start shopping for the best networking accessories.</CardDescription>

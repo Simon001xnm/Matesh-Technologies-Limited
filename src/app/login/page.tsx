@@ -9,7 +9,13 @@ export default function LoginPage() {
       <Card className="w-full max-w-md shadow-xl">
         <CardHeader className="text-center">
           <Link href="/" className="inline-block mb-4">
-            <Image src="/logo.png" alt="Matesh Tech Logo" width={40} height={40} className="h-10 w-auto mx-auto" />
+            <Image 
+              src="/logo.png" 
+              alt="Matesh Tech Logo" 
+              width={40} 
+              height={40} 
+              className="h-10 w-auto mx-auto" // Ensure this class doesn't conflict
+            />
           </Link>
           <CardTitle className="text-2xl font-bold">Welcome Back!</CardTitle>
           <CardDescription>Log in to access your account and continue shopping.</CardDescription>
