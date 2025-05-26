@@ -1,7 +1,8 @@
 import Image from "next/image";
 import type { Supplier } from "@/types";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Globe, Mail, Star } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Globe, Mail, ShieldCheck, Star } from "lucide-react";
 import { RatingStars } from "@/components/shared/rating-stars";
 
 interface SupplierInfoProps {
@@ -33,7 +34,21 @@ export function SupplierInfo({ supplier }: SupplierInfoProps) {
             className="rounded-full border-4 border-background bg-background shadow-md"
           />
         </div>
-        <CardTitle className="text-2xl font-bold text-primary">{supplier.name}</CardTitle>
+        <div className="flex items-center gap-2">
+          <CardTitle className="text-2xl font-bold text-primary">{supplier.name}</CardTitle>
+          {supplier.isVerified && (
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <ShieldCheck className="h-6 w-6 text-blue-500" />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Verified Supplier</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          )}
+        </div>
         {supplier.rating !== undefined && supplier.reviewCount !== undefined && (
           <div className="flex items-center mt-1">
             <RatingStars rating={supplier.rating} size={18} />
@@ -69,3 +84,11 @@ export function SupplierInfo({ supplier }: SupplierInfoProps) {
     </Card>
   );
 }
+
+// Need to import Tooltip components for the verified badge
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"

@@ -2,6 +2,8 @@ import { ProductCard } from "@/components/products/product-card";
 import { ProductFilters, ProductSortDropdown } from "@/components/products/product-filters";
 import { placeholderProducts } from "@/lib/placeholder-data";
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
+import { Input } from "@/components/ui/input";
+import { Search } from "lucide-react";
 
 // This would typically come from API/DB
 const products = placeholderProducts;
@@ -15,6 +17,17 @@ export default function ProductsPage() {
           Browse our extensive collection of networking and fiber optic accessories.
         </p>
       </header>
+
+      <div className="mb-8">
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+          <Input 
+            type="search" 
+            placeholder="Search products..." 
+            className="w-full pl-10 pr-4 py-2 rounded-lg border shadow-sm" 
+          />
+        </div>
+      </div>
 
       <div className="flex flex-col lg:flex-row gap-8">
         <ProductFilters />

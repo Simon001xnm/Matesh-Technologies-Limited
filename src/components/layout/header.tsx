@@ -8,6 +8,7 @@ import type { NavItem } from "@/types"
 
 const mainNavItems: NavItem[] = [
   { title: "Products", href: "/products" },
+  { title: "Suppliers", href: "/suppliers" },
   // Add more main navigation items here
 ];
 
@@ -21,7 +22,7 @@ export function Header() {
           <span className="font-bold sm:inline-block text-xl">Matesh Tech</span>
         </Link>
         <MainNav items={mainNavItems} />
-        <div className="flex flex-1 items-center justify-end space-x-2">
+        <div className="flex flex-1 items-center justify-end space-x-1 md:space-x-2">
           <ThemeToggle />
           <UserNav />
         </div>

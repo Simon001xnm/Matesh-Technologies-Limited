@@ -3,11 +3,13 @@ import type { Product } from "@/types";
 import { ProductImageGallery } from "@/components/products/product-image-gallery";
 import { ProductReviewSummary } from "@/components/products/product-review-summary";
 import { AddToCartButton } from "@/components/products/add-to-cart-button";
+import { AddToWishlistButton } from "@/components/products/add-to-wishlist-button";
+import { ContactSupplierDialog } from "@/components/products/contact-supplier-dialog";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { AlertCircle, ChevronLeft, Tag, Truck } from "lucide-react";
+import { AlertCircle, ChevronLeft, Tag, Truck, MessageSquare } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -20,12 +22,9 @@ interface ProductDetailPageProps {
   params: { id: string };
 }
 
-// Simulate fetching product data
 async function fetchProduct(id: string): Promise<Product | null> {
-  // In a real app, fetch from your database or API
   const product = getProductById(id);
   if (!product) return null;
-  // Simulate reviews if not present
   if (!product.reviews || product.reviews.length === 0) {
     product.reviews = placeholderProducts.find(p => p.id === id)?.reviews || [];
   }
@@ -69,17 +68,27 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           
           <div className="flex items-center mb-4">
             {/* Placeholder for rating */}
-            {/* <RatingStars rating={product.rating || 0} /> */}
-            {/* <span className="ml-2 text-sm text-muted-foreground">({product.reviewCount || 0} reviews)</span> */}
           </div>
 
           <p className="text-3xl font-bold text-foreground mb-6">KSH {product.price.toFixed(2)}</p>
           
           <p className="text-base text-muted-foreground leading-relaxed mb-6">{product.description}</p>
 
-          <div className="mb-6">
-             <AddToCartButton product={product} size="lg" className="w-full md:w-auto" />
+          <div className="flex flex-col sm:flex-row gap-3 mb-6">
+             <AddToCartButton product={product} size="lg" className="w-full sm:w-auto flex-grow" />
+             <AddToWishlistButton product={product} size="lg" variant="outline" className="w-full sm:w-auto" showText={true} />
           </div>
+           {product.supplierName && product.supplierId && (
+            <ContactSupplierDialog
+              productName={product.name}
+              supplierName={product.supplierName}
+              trigger={
+                <Button variant="outline" className="w-full md:w-auto mb-6">
+                  <MessageSquare className="mr-2 h-4 w-4" /> Contact Supplier
+                </Button>
+              }
+            />
+          )}
           
           <div className="space-y-3 text-sm">
             <div className="flex items-center">

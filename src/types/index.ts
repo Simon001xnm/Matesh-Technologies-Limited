@@ -40,6 +40,7 @@ export interface Supplier {
   rating?: number;
   reviewCount?: number;
   reviews?: Review[];
+  isVerified?: boolean; // Added for Verified Supplier badge
   // products list might be fetched separately or as part of a detailed supplier view
 }
 
@@ -59,6 +60,13 @@ export interface CartItem {
   name: string;
   price: number;
   quantity: number;
+  imageUrl: string;
+}
+
+export interface WishlistItem {
+  productId: string;
+  name: string;
+  price: number;
   imageUrl: string;
 }
 

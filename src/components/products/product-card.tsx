@@ -5,10 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Star } from "lucide-react";
 import { AddToCartButton } from "./add-to-cart-button";
-
-interface ProductCardProps {
-  product: Product;
-}
+import { AddToWishlistButton } from "./add-to-wishlist-button"; // Added import
 
 // Helper function to generate a concise hint from category (max 2 words)
 const getProductCardHint = (categoryName: string): string => {
@@ -25,6 +22,9 @@ export function ProductCard({ product }: ProductCardProps) {
     <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
       <Link href={`/products/${product.id}`} className="block">
         <CardHeader className="p-0 relative">
+           <div className="absolute top-2 right-2 z-10">
+            <AddToWishlistButton product={product} size="sm" variant="ghost" className="bg-background/70 hover:bg-background/90" />
+          </div>
           <div className="aspect-[4/3] w-full overflow-hidden">
             <Image
               data-ai-hint={getProductCardHint(product.category)}

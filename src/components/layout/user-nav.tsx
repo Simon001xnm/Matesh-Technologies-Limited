@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { User, LogIn, LogOut, ShoppingCart } from "lucide-react"
+import { User, LogIn, LogOut, ShoppingCart, Heart } from "lucide-react" // Added Heart
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -22,7 +22,12 @@ const user = { name: "User Name", email: "user@example.com", imageUrl: "" };
 
 export function UserNav() {
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center space-x-1">
+      <Link href="/wishlist" passHref>
+        <Button variant="ghost" size="icon" aria-label="Wishlist">
+          <Heart className="h-5 w-5" />
+        </Button>
+      </Link>
       <Link href="/cart" passHref>
         <Button variant="ghost" size="icon" aria-label="Shopping Cart">
           <ShoppingCart className="h-5 w-5" />
@@ -53,6 +58,12 @@ export function UserNav() {
                 <Link href="/profile">
                   <User className="mr-2 h-4 w-4" />
                   <span>Profile</span>
+                </Link>
+              </DropdownMenuItem>
+               <DropdownMenuItem asChild>
+                <Link href="/wishlist">
+                  <Heart className="mr-2 h-4 w-4" />
+                  <span>Wishlist</span>
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuGroup>
