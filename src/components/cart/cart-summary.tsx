@@ -1,3 +1,4 @@
+
 "use client"
 
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Separator } from "@/components/ui/separator";
 import { useCartStore } from "@/hooks/use-cart";
 import Link from "next/link";
+import { OrderViaWhatsAppButton } from "@/components/products/OrderViaWhatsAppButton"; // Added import
 
 export function CartSummary() {
   const { items, totalPrice, totalItems } = useCartStore();
@@ -41,12 +43,18 @@ export function CartSummary() {
           <span>KSH {orderTotal.toFixed(2)}</span>
         </div>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex flex-col gap-2">
         <Button className="w-full" size="lg" asChild>
           <Link href="/checkout"> {/* Placeholder for checkout page */}
             Proceed to Checkout
           </Link>
         </Button>
+        <OrderViaWhatsAppButton 
+            cartItems={items} 
+            buttonText="Order All via WhatsApp" 
+            size="lg" 
+            className="w-full" 
+        />
       </CardFooter>
     </Card>
   );

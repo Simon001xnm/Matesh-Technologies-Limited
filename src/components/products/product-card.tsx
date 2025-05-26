@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/types";
@@ -5,7 +6,8 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Star } from "lucide-react";
 import { AddToCartButton } from "./add-to-cart-button";
-import { AddToWishlistButton } from "./add-to-wishlist-button"; // Added import
+import { AddToWishlistButton } from "./add-to-wishlist-button";
+import { OrderViaWhatsAppButton } from "./OrderViaWhatsAppButton"; // Added import
 
 // Helper function to generate a concise hint from category (max 2 words)
 const getProductCardHint = (categoryName: string): string => {
@@ -16,6 +18,10 @@ const getProductCardHint = (categoryName: string): string => {
   }
   return words[0] || "item image"; // More descriptive default
 };
+
+interface ProductCardProps { // Added interface for props
+  product: Product;
+}
 
 export function ProductCard({ product }: ProductCardProps) {
   return (
@@ -57,8 +63,9 @@ export function ProductCard({ product }: ProductCardProps) {
         )}
         <p className="text-xl font-bold text-primary mt-3">KSH {product.price.toFixed(2)}</p>
       </CardContent>
-      <CardFooter className="p-4 border-t">
+      <CardFooter className="p-4 border-t flex flex-col gap-2">
         <AddToCartButton product={product} />
+        <OrderViaWhatsAppButton productName={product.name} size="sm" className="w-full" buttonText="WhatsApp Order"/>
       </CardFooter>
     </Card>
   );
