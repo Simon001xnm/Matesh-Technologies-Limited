@@ -24,10 +24,11 @@ export default function WhatsAppFloat() {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-transform duration-300 ease-in-out hover:scale-110 flex items-center justify-center"
+      className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-transform duration-300 ease-in-out hover:scale-110 flex items-center justify-center space-x-2"
       aria-label="Chat on WhatsApp"
     >
       <WhatsAppIcon />
+      <span className="text-sm font-medium hidden sm:inline">WhatsApp us today</span>
     </Link>
   );
 }
