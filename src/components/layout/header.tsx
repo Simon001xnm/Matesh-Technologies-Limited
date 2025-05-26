@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 import Image from "next/image";
 import { MainNav } from "@/components/layout/main-nav"
@@ -9,6 +10,8 @@ import type { NavItem } from "@/types"
 const mainNavItems: NavItem[] = [
   { title: "Products", href: "/products" },
   { title: "Suppliers", href: "/suppliers" },
+  { title: "About Us", href: "/about" },
+  { title: "Contact Us", href: "/contact" },
   // Add more main navigation items here
 ];
 
@@ -21,8 +24,8 @@ export function Header() {
           <Image 
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-XbLRyutGuhzXVlWYm2gppY3nmShsDtXkHqxJsl41HxvEBlznLXeHDBBBGQIKl9tZry0&usqp=CAU" 
             alt="Matesh Tech Logo" 
-            width={96} 
-            height={96} 
+            width={96} // Max width for lg screens
+            height={96} // Max height for lg screens
             className="h-20 w-auto lg:h-24" // Base h-20 (80px), lg:h-24 (96px)
           />
         </Link>
