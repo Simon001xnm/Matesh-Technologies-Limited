@@ -26,8 +26,7 @@ export default function AboutPage() {
       <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
         <div>
           <Image
-            data-ai-hint="networking infrastructure"
-            src="https://placehold.co/600x400.png"
+            src="/who-we-are-image.jpeg"
             alt="Matesh Technologies Office"
             width={600}
             height={400}
