@@ -42,8 +42,8 @@ export default function ContactPage() {
             <CardContent className="space-y-4">
               <div className="flex items-center">
                 <Mail className="h-5 w-5 mr-3 text-primary" />
-                <a href="mailto:info@mateshtechnologies.co.ke" className="text-muted-foreground hover:text-primary">
-                  info@mateshtechnologies.co.ke
+                <a href="mailto:mateshtech@gmail.com" className="text-muted-foreground hover:text-primary">
+                  mateshtech@gmail.com
                 </a>
               </div>
               <div className="flex items-center">
