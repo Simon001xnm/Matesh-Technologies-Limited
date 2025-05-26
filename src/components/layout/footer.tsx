@@ -1,3 +1,6 @@
+
+import Link from "next/link";
+
 export function Footer() {
   return (
     <footer className="py-6 md:px-8 md:py-0 border-t">
@@ -6,9 +9,17 @@ export function Footer() {
           &copy; {new Date().getFullYear()} Matesh Technologies. All rights reserved.
         </p>
         <div className="flex space-x-4">
-          {/* Add footer links here if needed */}
-          {/* <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary">Terms</Link>
-          <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary">Privacy</Link> */}
+          <p className="text-sm text-muted-foreground">
+            Designed by{" "}
+            <Link
+              href="https://simon-websites.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary hover:underline"
+            >
+              Simon Styles Technologies Limited
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
