@@ -26,8 +26,8 @@ export default function AboutPage() {
       <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
         <div>
           <Image
-            src="/who-we-are-image.jpeg"
-            alt="Matesh Technologies Office"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCmQjd46gqs_3FS03MmBUMF48PQ-lO-CQaTA&s"
+            alt="Matesh Technologies Team or Office"
             width={600}
             height={400}
             className="rounded-lg shadow-xl"
