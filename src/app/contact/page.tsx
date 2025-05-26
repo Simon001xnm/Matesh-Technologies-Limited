@@ -48,13 +48,14 @@ export default function ContactPage() {
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-primary" />
-                <span className="text-muted-foreground">(+254) 700 000 000</span> {/* Placeholder phone */}
+                <span className="text-muted-foreground">(+254) 701 694 469</span>
               </div>
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 text-primary mt-1" />
                 <div className="text-muted-foreground">
                   <p>Matesh Technologies</p>
-                  <p>123 Biashara Street</p> {/* Placeholder address */}
+                  <p>Good Hope Plaza</p>
+                  <p>River Road</p>
                   <p>Nairobi, Kenya</p>
                 </div>
               </div>
