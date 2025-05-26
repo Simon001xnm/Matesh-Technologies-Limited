@@ -1,8 +1,36 @@
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { placeholderProducts } from '@/lib/placeholder-data'; // Import placeholderProducts
+
+// Mapping of category names to specific image URLs from your product list
+const categoryImages: Record<string, string> = {
+  'Fiber Cables': 'https://ctcsolutions.co.ke/wp-content/uploads/2021/07/Simplex-SC-APC-9-125-Single-mode-Fiber-Optic-Pigtail-400x400.jpg',
+  'Connectors': 'https://ctcsolutions.co.ke/wp-content/uploads/2021/07/Fast_connector_SC_APC-removebg-preview-1.png',
+  'Adapters': 'https://ctcsolutions.co.ke/wp-content/uploads/2024/07/1_e82d820a-ede1-4d97-8bd4-a39a657ff22b-400x400.webp',
+  'Patch Panels': 'https://ctcsolutions.co.ke/wp-content/uploads/2021/08/atb-with-2pcs-Lc-upc-pigtails-and-2pcs-lc-upc-duplex-adapter-400x202.png', // Using ATB image
+  'Networking Tools': 'https://ctcsolutions.co.ke/wp-content/uploads/2024/10/fibertool-kit-400x400.jpg',
+  'SFP Modules': 'https://ctcsolutions.co.ke/wp-content/uploads/2021/07/BARE-SPLITTER-0.5MM-1-400x350.png', // Using Bare Splitter image
+  'Media Converters': 'https://ctcsolutions.co.ke/wp-content/uploads/2021/08/atb-with-2pcs-Lc-upc-pigtails-and-2pcs-lc-upc-duplex-adapter-400x202.png', // Using ATB image
+  'Cable Management': 'https://ctcsolutions.co.ke/wp-content/uploads/2021/08/ADSS-J-Hook-400x400.jpg',
+  'Testers': 'https://ctcsolutions.co.ke/wp-content/uploads/2021/07/Splicing-Machine-AI-9-Signal-Fire-400x400.jpg', // Using Splicing Machine image
+  'Enclosures': 'https://ctcsolutions.co.ke/wp-content/uploads/2021/08/atb-with-2pcs-Lc-upc-pigtails-and-2pcs-lc-upc-duplex-adapter-400x202.png' // Using ATB image
+};
+
+const categoryDisplayOrder = [
+  'Fiber Cables', 
+  'Connectors', 
+  'Adapters', 
+  'Patch Panels', 
+  'Networking Tools', 
+  'SFP Modules', 
+  'Media Converters', 
+  'Cable Management', 
+  'Testers', 
+  'Enclosures'
+];
 
 export default function HomePage() {
   const featuredProducts = placeholderProducts.slice(0, 4); // Get the first 4 products for features section
@@ -14,7 +42,7 @@ export default function HomePage() {
     if (words.length > 1 && (words[0] === "fiber" || words[0] === "networking")) {
       return `${words[0]} ${words[1]}`;
     }
-    return words[0];
+    return words[0] || "item";
   };
 
 
@@ -52,7 +80,7 @@ export default function HomePage() {
                   src={product.imageUrl}
                   alt={product.name}
                   width={400}
-                  height={400} // Assuming featured images are square, adjust if necessary or use product image aspect ratio
+                  height={400}
                   className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                 />
               </div>
@@ -76,12 +104,12 @@ export default function HomePage() {
       <section id="categories" className="py-16 sm:py-24 bg-muted rounded-lg">
         <h2 className="text-3xl font-bold tracking-tight text-center mb-12">Shop by Category</h2>
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 container">
-          {['Fiber Cables', 'Connectors', 'Adapters', 'Patch Panels', 'Networking Tools', 'SFP Modules', 'Media Converters', 'Cable Management', 'Testers', 'Enclosures'].map((category, i) => (
-             <Link href="/products" key={category} className="group block">
+          {categoryDisplayOrder.map((category) => (
+             <Link href={`/products?category=${encodeURIComponent(category.toLowerCase().replace(/ /g, '-'))}`} key={category} className="group block">
               <div className="aspect-square w-full overflow-hidden rounded-lg bg-card shadow-sm group-hover:shadow-lg transition-shadow">
                  <Image
                   data-ai-hint={getCategoryHint(category)}
-                  src={`https://placehold.co/300x300.png?category=${i}`}
+                  src={categoryImages[category] || `https://placehold.co/300x300.png`}
                   alt={category}
                   width={300}
                   height={300}
