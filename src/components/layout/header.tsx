@@ -19,11 +19,11 @@ export function Header() {
         <MobileNav mainNavItems={mainNavItems} />
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Image 
-            src="/logo.png" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-XbLRyutGuhzXVlWYm2gppY3nmShsDtXkHqxJsl41HxvEBlznLXeHDBBBGQIKl9tZry0&usqp=CAU" 
             alt="Matesh Tech Logo" 
             width={36} 
             height={36} 
-            className="h-9 w-auto" // Ensure this class doesn't conflict
+            className="h-9 w-auto"
           />
           <span className="font-bold sm:inline-block text-xl">Matesh Tech</span>
         </Link>
