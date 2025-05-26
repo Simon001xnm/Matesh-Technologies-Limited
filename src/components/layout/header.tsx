@@ -21,11 +21,11 @@ export function Header() {
           <Image 
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-XbLRyutGuhzXVlWYm2gppY3nmShsDtXkHqxJsl41HxvEBlznLXeHDBBBGQIKl9tZry0&usqp=CAU" 
             alt="Matesh Tech Logo" 
-            width={36} 
-            height={36} 
-            className="h-9 w-auto"
+            width={40} 
+            height={40} 
+            className="h-10 w-auto" // Ensures height is applied, width adjusts automatically
           />
-          <span className="font-bold sm:inline-block text-xl">Matesh Tech</span>
+          {/* <span className="font-bold sm:inline-block text-xl">Matesh Tech</span> */}
         </Link>
         <MainNav items={mainNavItems} />
         <div className="flex flex-1 items-center justify-end space-x-1 md:space-x-2">
