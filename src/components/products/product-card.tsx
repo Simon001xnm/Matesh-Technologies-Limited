@@ -10,6 +10,16 @@ interface ProductCardProps {
   product: Product;
 }
 
+// Helper function to generate a concise hint from category (max 2 words)
+const getProductCardHint = (categoryName: string): string => {
+  if (!categoryName) return "product";
+  const words = categoryName.toLowerCase().split(' ');
+  if (words.length > 1 && (words[0] === "fiber" || words[0] === "networking")) {
+    return `${words[0]} ${words[1]}`;
+  }
+  return words[0] || "item";
+};
+
 export function ProductCard({ product }: ProductCardProps) {
   return (
     <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
@@ -17,7 +27,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <CardHeader className="p-0 relative">
           <div className="aspect-[4/3] w-full overflow-hidden">
             <Image
-              data-ai-hint="network device"
+              data-ai-hint={getProductCardHint(product.category)}
               src={product.imageUrl || "https://placehold.co/400x300.png"}
               alt={product.name}
               width={400}

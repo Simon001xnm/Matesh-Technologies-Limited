@@ -15,7 +15,10 @@ export function ProductImageGallery({ images, productName }: ProductImageGallery
 
   if (!images || images.length === 0) {
     images = ["https://placehold.co/600x400.png"];
-    setSelectedImage(images[0]);
+    // Ensure selectedImage is updated if images array was initially empty or undefined
+    if (selectedImage !== images[0]) {
+       setSelectedImage(images[0]);
+    }
   }
 
 
@@ -25,7 +28,7 @@ export function ProductImageGallery({ images, productName }: ProductImageGallery
         <CardContent className="p-0">
           <div className="aspect-[4/3] w-full">
             <Image
-              data-ai-hint="product detail"
+              data-ai-hint="product photo"
               src={selectedImage}
               alt={`Main image for ${productName}`}
               width={600}
@@ -48,7 +51,7 @@ export function ProductImageGallery({ images, productName }: ProductImageGallery
               )}
             >
               <Image
-                data-ai-hint="product thumbnail"
+                data-ai-hint="product thumb"
                 src={image}
                 alt={`Thumbnail ${index + 1} for ${productName}`}
                 width={150}

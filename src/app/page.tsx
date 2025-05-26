@@ -2,8 +2,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { placeholderProducts } from '@/lib/placeholder-data'; // Import placeholderProducts
 
 export default function HomePage() {
+  const featuredProducts = placeholderProducts.slice(0, 4); // Get the first 4 products for features section
+
+  // Helper function to generate a concise hint from category (max 2 words)
+  const getCategoryHint = (categoryName: string): string => {
+    if (!categoryName) return "product";
+    const words = categoryName.toLowerCase().split(' ');
+    if (words.length > 1 && (words[0] === "fiber" || words[0] === "networking")) {
+      return `${words[0]} ${words[1]}`;
+    }
+    return words[0];
+  };
+
+
   return (
     <div className="container mx-auto px-4 py-12">
       <section className="text-center">
@@ -30,30 +44,29 @@ export default function HomePage() {
       <section id="featured-products" className="py-16 sm:py-24">
         <h2 className="text-3xl font-bold tracking-tight text-center mb-12">Featured Products</h2>
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {/* Placeholder for Featured Product Cards */}
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="group relative rounded-lg border p-4 shadow-sm hover:shadow-md transition-shadow">
+          {featuredProducts.map((product) => (
+            <div key={product.id} className="group relative rounded-lg border p-4 shadow-sm hover:shadow-md transition-shadow">
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
                 <Image
-                  data-ai-hint="networking cable"
-                  src={`https://placehold.co/400x400.png?product=${i}`}
-                  alt={`Featured Product ${i}`}
+                  data-ai-hint={getCategoryHint(product.category)}
+                  src={product.imageUrl}
+                  alt={product.name}
                   width={400}
-                  height={400}
+                  height={400} // Assuming featured images are square, adjust if necessary or use product image aspect ratio
                   className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                 />
               </div>
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-foreground">
-                    <Link href="/products"> {/* Replace with actual product link */}
+                    <Link href={`/products/${product.id}`}>
                       <span aria-hidden="true" className="absolute inset-0" />
-                      Product Name {i}
+                      {product.name}
                     </Link>
                   </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">Category</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{product.category}</p>
                 </div>
-                <p className="text-sm font-medium text-primary">$99.99</p>
+                <p className="text-sm font-medium text-primary">${product.price.toFixed(2)}</p>
               </div>
             </div>
           ))}
@@ -67,7 +80,7 @@ export default function HomePage() {
              <Link href="/products" key={category} className="group block">
               <div className="aspect-square w-full overflow-hidden rounded-lg bg-card shadow-sm group-hover:shadow-lg transition-shadow">
                  <Image
-                  data-ai-hint="network switch"
+                  data-ai-hint={getCategoryHint(category)}
                   src={`https://placehold.co/300x300.png?category=${i}`}
                   alt={category}
                   width={300}

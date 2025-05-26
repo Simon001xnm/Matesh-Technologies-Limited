@@ -32,7 +32,7 @@ export const placeholderProducts: Product[] = [
     imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/07/Fast_connector_SC_APC-removebg-preview-1.png",
     images: ["https://ctcsolutions.co.ke/wp-content/uploads/2021/07/Fast_connector_SC_APC-removebg-preview-1.png"],
     stock: 480,
-    rating: 4.5, // Average of 5 and 4
+    rating: 4.5,
     reviewCount: 2,
     reviews: placeholderReviews.filter(r => r.productId === "prod1"),
     supplierId: "sup1",
@@ -244,7 +244,7 @@ export const placeholderProducts: Product[] = [
     description: "1x4 bare fiber PLC splitter for optical signal distribution.",
     longDescription: "This 1x4 Planar Lightwave Circuit (PLC) splitter divides a single optical input into four outputs with minimal loss. Bare fiber type for integration into custom enclosures or splice trays.",
     price: 15.25,
-    category: "Connectors", // Could also be Adapters or a more specific "Optical Components"
+    category: "Connectors",
     imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/07/BARE-SPLITTER-0.5MM-1-400x350.png",
     images: ["https://ctcsolutions.co.ke/wp-content/uploads/2021/07/BARE-SPLITTER-0.5MM-1-400x350.png"],
     stock: 70,
@@ -268,7 +268,7 @@ export const placeholderSuppliers: Supplier[] = [
     contactEmail: "sales@opticonnect.com",
     website: "https://opticonnect.com",
     rating: 4.2,
-    reviewCount: 1, // From rev4
+    reviewCount: 1, 
     reviews: placeholderReviews.filter(r => r.supplierId === "sup1"),
   },
   {
@@ -285,10 +285,7 @@ export const placeholderSuppliers: Supplier[] = [
   },
 ];
 
-export const placeholderCartItems: CartItem[] = [
-  // Cart items will reference the new product IDs if needed, or be empty initially.
-  // For now, let's clear it as product IDs have changed.
-];
+export const placeholderCartItems: CartItem[] = [];
 
 export function getProductById(id: string): Product | undefined {
   return placeholderProducts.find(p => p.id === id);
