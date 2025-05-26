@@ -1,3 +1,4 @@
+
 import { getProductById, placeholderProducts } from "@/lib/placeholder-data";
 import type { Product } from "@/types";
 import { ProductImageGallery } from "@/components/products/product-image-gallery";
@@ -5,6 +6,7 @@ import { ProductReviewSummary } from "@/components/products/product-review-summa
 import { AddToCartButton } from "@/components/products/add-to-cart-button";
 import { AddToWishlistButton } from "@/components/products/add-to-wishlist-button";
 import { ContactSupplierDialog } from "@/components/products/contact-supplier-dialog";
+import { OrderViaWhatsAppButton } from "@/components/products/OrderViaWhatsAppButton"; // New import
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
@@ -74,9 +76,12 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           
           <p className="text-base text-muted-foreground leading-relaxed mb-6">{product.description}</p>
 
-          <div className="flex flex-col sm:flex-row gap-3 mb-6">
-             <AddToCartButton product={product} size="lg" className="w-full sm:w-auto flex-grow" />
-             <AddToWishlistButton product={product} size="lg" variant="outline" className="w-full sm:w-auto" showText={true} />
+          <div className="flex flex-col gap-3 mb-6">
+            <div className="flex flex-col sm:flex-row gap-3">
+                <AddToCartButton product={product} size="lg" className="w-full sm:w-auto flex-grow" />
+                <AddToWishlistButton product={product} size="lg" variant="outline" className="w-full sm:w-auto" showText={true} />
+            </div>
+            <OrderViaWhatsAppButton productName={product.name} className="w-full" />
           </div>
            {product.supplierName && product.supplierId && (
             <ContactSupplierDialog
