@@ -1,6 +1,6 @@
 import { AuthForm } from "@/components/auth/auth-form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mountain } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function SignupPage() {
@@ -9,7 +9,7 @@ export default function SignupPage() {
       <Card className="w-full max-w-md shadow-xl">
         <CardHeader className="text-center">
            <Link href="/" className="inline-block mb-4">
-            <Mountain className="h-10 w-10 text-primary mx-auto" />
+            <Image src="/logo.png" alt="Matesh Tech Logo" width={40} height={40} className="h-10 w-auto mx-auto" />
           </Link>
           <CardTitle className="text-2xl font-bold">Create an Account</CardTitle>
           <CardDescription>Join Matesh Technologies to start shopping for the best networking accessories.</CardDescription>

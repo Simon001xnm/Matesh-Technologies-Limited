@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mountain } from "lucide-react"
+import Image from "next/image";
 import { MainNav } from "@/components/layout/main-nav"
 import { MobileNav } from "@/components/layout/mobile-nav"
 import { UserNav } from "@/components/layout/user-nav"
@@ -18,7 +18,7 @@ export function Header() {
       <div className="container flex h-16 max-w-screen-2xl items-center">
         <MobileNav mainNavItems={mainNavItems} />
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Mountain className="h-6 w-6 text-primary" />
+          <Image src="/logo.png" alt="Matesh Tech Logo" width={36} height={36} className="h-9 w-auto" />
           <span className="font-bold sm:inline-block text-xl">Matesh Tech</span>
         </Link>
         <MainNav items={mainNavItems} />
