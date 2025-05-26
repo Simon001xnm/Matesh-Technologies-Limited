@@ -12,9 +12,9 @@ export default function SignupPage() {
             <Image 
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-XbLRyutGuhzXVlWYm2gppY3nmShsDtXkHqxJsl41HxvEBlznLXeHDBBBGQIKl9tZry0&usqp=CAU" 
               alt="Matesh Tech Logo" 
-              width={40} 
-              height={40} 
-              className="h-10 w-auto mx-auto"
+              width={64} 
+              height={64} 
+              className="h-10 w-auto md:h-16 mx-auto" // Base h-10 (40px), md:h-16 (64px)
             />
           </Link>
           <CardTitle className="text-2xl font-bold">Create an Account</CardTitle>

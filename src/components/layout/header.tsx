@@ -21,9 +21,9 @@ export function Header() {
           <Image 
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-XbLRyutGuhzXVlWYm2gppY3nmShsDtXkHqxJsl41HxvEBlznLXeHDBBBGQIKl9tZry0&usqp=CAU" 
             alt="Matesh Tech Logo" 
-            width={80} 
-            height={80} 
-            className="h-20 w-auto" // Ensures height is applied, width adjusts automatically
+            width={96} 
+            height={96} 
+            className="h-20 w-auto lg:h-24" // Base h-20 (80px), lg:h-24 (96px)
           />
         </Link>
         <MainNav items={mainNavItems} />
