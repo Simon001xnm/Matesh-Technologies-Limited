@@ -12,12 +12,12 @@ interface ProductCardProps {
 
 // Helper function to generate a concise hint from category (max 2 words)
 const getProductCardHint = (categoryName: string): string => {
-  if (!categoryName) return "product";
+  if (!categoryName) return "product image"; // More descriptive default
   const words = categoryName.toLowerCase().split(' ');
   if (words.length > 1 && (words[0] === "fiber" || words[0] === "networking")) {
     return `${words[0]} ${words[1]}`;
   }
-  return words[0] || "item";
+  return words[0] || "item image"; // More descriptive default
 };
 
 export function ProductCard({ product }: ProductCardProps) {
@@ -55,7 +55,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <span className="ml-1 text-xs text-muted-foreground">({product.reviewCount} reviews)</span>
           </div>
         )}
-        <p className="text-xl font-bold text-primary mt-3">${product.price.toFixed(2)}</p>
+        <p className="text-xl font-bold text-primary mt-3">KSH {product.price.toFixed(2)}</p>
       </CardContent>
       <CardFooter className="p-4 border-t">
         <AddToCartButton product={product} />

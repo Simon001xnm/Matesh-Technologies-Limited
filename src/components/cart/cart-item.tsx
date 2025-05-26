@@ -45,7 +45,7 @@ export function CartItemCard({ item }: CartItemProps) {
         <Link href={`/products/${item.productId}`} className="hover:text-primary">
           <h3 className="font-semibold text-base">{item.name}</h3>
         </Link>
-        <p className="text-sm text-muted-foreground">Price: ${item.price.toFixed(2)}</p>
+        <p className="text-sm text-muted-foreground">Price: KSH {item.price.toFixed(2)}</p>
       </div>
       <div className="flex items-center gap-2">
         <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => handleQuantityChange(item.quantity - 1)} disabled={item.quantity <= 1}>
@@ -62,7 +62,7 @@ export function CartItemCard({ item }: CartItemProps) {
           <Plus className="h-4 w-4" />
         </Button>
       </div>
-      <p className="font-semibold w-20 text-right">${(item.price * item.quantity).toFixed(2)}</p>
+      <p className="font-semibold w-20 text-right">KSH {(item.price * item.quantity).toFixed(2)}</p>
       <Button variant="ghost" size="icon" className="text-destructive hover:text-destructive/80" onClick={handleRemoveItem}>
         <Trash2 className="h-5 w-5" />
       </Button>

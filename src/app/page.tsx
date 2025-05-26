@@ -66,7 +66,7 @@ export default function HomePage() {
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">{product.category}</p>
                 </div>
-                <p className="text-sm font-medium text-primary">${product.price.toFixed(2)}</p>
+                <p className="text-sm font-medium text-primary">KSH {product.price.toFixed(2)}</p>
               </div>
             </div>
           ))}

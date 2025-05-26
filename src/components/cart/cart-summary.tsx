@@ -9,8 +9,8 @@ import Link from "next/link";
 export function CartSummary() {
   const { items, totalPrice, totalItems } = useCartStore();
   const subtotal = totalPrice();
-  const shippingEstimate = 5.00; // Placeholder
-  const taxEstimate = subtotal * 0.08; // Placeholder 8% tax
+  const shippingEstimate = 500.00; // Placeholder in KSH
+  const taxEstimate = subtotal * 0.16; // Placeholder 16% tax (VAT in Kenya)
   const orderTotal = subtotal + shippingEstimate + taxEstimate;
 
   if (items.length === 0) {
@@ -25,20 +25,20 @@ export function CartSummary() {
       <CardContent className="space-y-3">
         <div className="flex justify-between text-sm">
           <span>Subtotal ({totalItems()} items)</span>
-          <span>${subtotal.toFixed(2)}</span>
+          <span>KSH {subtotal.toFixed(2)}</span>
         </div>
         <div className="flex justify-between text-sm text-muted-foreground">
           <span>Shipping estimate</span>
-          <span>${shippingEstimate.toFixed(2)}</span>
+          <span>KSH {shippingEstimate.toFixed(2)}</span>
         </div>
         <div className="flex justify-between text-sm text-muted-foreground">
-          <span>Tax estimate</span>
-          <span>${taxEstimate.toFixed(2)}</span>
+          <span>Tax estimate (16%)</span>
+          <span>KSH {taxEstimate.toFixed(2)}</span>
         </div>
         <Separator />
         <div className="flex justify-between font-semibold text-lg">
           <span>Order total</span>
-          <span>${orderTotal.toFixed(2)}</span>
+          <span>KSH {orderTotal.toFixed(2)}</span>
         </div>
       </CardContent>
       <CardFooter>

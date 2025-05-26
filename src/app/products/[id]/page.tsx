@@ -73,7 +73,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             {/* <span className="ml-2 text-sm text-muted-foreground">({product.reviewCount || 0} reviews)</span> */}
           </div>
 
-          <p className="text-3xl font-bold text-foreground mb-6">${product.price.toFixed(2)}</p>
+          <p className="text-3xl font-bold text-foreground mb-6">KSH {product.price.toFixed(2)}</p>
           
           <p className="text-base text-muted-foreground leading-relaxed mb-6">{product.description}</p>
 
