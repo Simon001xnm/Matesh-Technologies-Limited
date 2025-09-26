@@ -55,9 +55,12 @@ const mainNavItems: NavItem[] = [
     title: "Fibre Optic Solutions", 
     href: "/products?category=fibre",
     children: [
-        { title: "Fiber Cables", href: "/products?category=fiber-cables" },
-        { title: "Connectors", href: "/products?category=connectors" },
-        { title: "Splicing Machines", href: "/products?category=splicing-machines" },
+        { title: "Fiber Optic Cables", href: "/products?category=fiber-optic-cables" },
+        { title: "Fibre Optic Bare PLC Splitters", href: "/products?category=fibre-optic-bare-plc-splitters" },
+        { title: "Fiber Optic Enclosures", href: "/products?category=fiber-optic-enclosures" },
+        { title: "Fast Connectors", href: "/products?category=fast-connectors" },
+        { title: "Fiber Patch cords & Pigtails", href: "/products?category=fiber-patch-cords-pigtails" },
+        { title: "Optical Distribution Frames", href: "/products?category=optical-distribution-frames" },
     ]
   },
   { 
