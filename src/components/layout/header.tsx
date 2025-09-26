@@ -89,7 +89,7 @@ const mainNavItems: NavItem[] = [
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 md:h-24 max-w-screen-2xl items-center">
+      <div className="container flex h-20 md:h-28 max-w-screen-2xl items-center">
         <MobileNav mainNavItems={mainNavItems} />
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Image 
@@ -97,7 +97,7 @@ export function Header() {
             alt="Matesh Tech Logo" 
             width={96}
             height={96}
-            className="h-12 w-auto md:h-20"
+            className="h-16 w-auto md:h-24"
           />
         </Link>
         <MainNav items={mainNavItems} />
