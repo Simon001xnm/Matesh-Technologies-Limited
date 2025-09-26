@@ -53,7 +53,10 @@ export default function HomePage() {
           Welcome to Matesh Technologies
         </h1>
         <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
-          Your one-stop shop for high-quality fiber optic and networking accessories. Explore our wide range of products designed for reliability and performance.
+          We're experts in Telecommunication, Networking and Security systems; automatic gates, Biometric systems installations, Closed Circuit televisions cameras (CCTVS), Business Branding.
+We sale: Fiber & wireless accessories; Tension Clamps, UPBs, Downleads, buckles, steel straps, ATBs, fiber and Ethernet patchcords, Routers, access points.
+Place your first order and score a big discount, for more info ☎️
+0701694469 / 0797880510
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Button asChild size="lg">
