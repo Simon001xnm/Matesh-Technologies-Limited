@@ -1,3 +1,4 @@
+
 import { AuthForm } from "@/components/auth/auth-form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
@@ -14,7 +15,7 @@ export default function LoginPage() {
               alt="Matesh Tech Logo" 
               width={64} 
               height={64} 
-              className="h-10 w-auto md:h-16 mx-auto" // Base h-10 (40px), md:h-16 (64px)
+              className="h-12 w-auto md:h-16 mx-auto"
             />
           </Link>
           <CardTitle className="text-2xl font-bold">Welcome Back!</CardTitle>

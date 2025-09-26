@@ -12,7 +12,12 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { cn } from "@/lib/utils"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import type { NavItem } from "@/types"
 
 interface MobileNavProps {
@@ -49,24 +54,30 @@ export function MobileNav({ mainNavItems }: MobileNavProps) {
           />
           <span className="font-bold sm:inline-block text-lg">Matesh Tech</span>
         </Link>
-        <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-          <div className="flex flex-col space-y-3">
-            {mainNavItems?.map(
-              (item) =>
-                item.href && (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="text-lg font-medium text-muted-foreground hover:text-primary" // Increased font size
-                    onClick={() => setOpen(false)}
-                  >
-                    {item.title}
-                  </Link>
-                )
-            )}
-             {/* Manually add login/signup if not authenticated, if UserNav is not part of mobile */}
-             {/* For simplicity, assuming UserNav might handle this or these are less critical for mobile quick nav */}
-          </div>
+        <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6 pr-6">
+           <Accordion type="multiple" className="w-full">
+            {mainNavItems?.map((item, index) => (
+              <AccordionItem value={`item-${index}`} key={item.title}>
+                <AccordionTrigger className="text-lg font-medium hover:no-underline">
+                   <Link href={item.href || '#'} onClick={() => setOpen(false)}>{item.title}</Link>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="flex flex-col space-y-2 pl-4">
+                    {item.children?.map((child) => (
+                      <Link
+                        key={child.title}
+                        href={child.href || '#'}
+                        className="text-base text-muted-foreground hover:text-primary"
+                        onClick={() => setOpen(false)}
+                      >
+                        {child.title}
+                      </Link>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </SheetContent>
     </Sheet>
