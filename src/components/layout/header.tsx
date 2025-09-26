@@ -30,9 +30,14 @@ const mainNavItems: NavItem[] = [
     title: "Wireless Devices", 
     href: "/products?category=wireless",
     children: [
-        { title: "Access Points", href: "/products?category=access-points" },
+        { title: "Wireless Outdoor CPE", href: "/products?category=wireless-outdoor-cpe" },
+        { title: "Wireless Access Points", href: "/products?category=wireless-access-points" },
         { title: "Routers", href: "/products?category=routers" },
-        { title: "Wireless Extenders", href: "/products?category=wireless-extenders" },
+        { title: "Network Switches", href: "/products?category=network-switches" },
+        { title: "Range Extenders", href: "/products?category=range-extenders" },
+        { title: "USB Wifi Adapters", href: "/products?category=usb-wifi-adapters" },
+        { title: "Point to point", href: "/products?category=point-to-point" },
+        { title: "Antennas", href: "/products?category=antennas" },
     ] 
   },
   { 
