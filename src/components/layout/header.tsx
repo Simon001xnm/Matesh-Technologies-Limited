@@ -8,11 +8,12 @@ import { ThemeToggle } from "@/components/shared/theme-toggle"
 import type { NavItem } from "@/types"
 
 const mainNavItems: NavItem[] = [
-  { title: "Products", href: "/products" },
-  { title: "Suppliers", href: "/suppliers" },
-  { title: "About Us", href: "/about" },
-  { title: "Contact Us", href: "/contact" },
-  // Add more main navigation items here
+  { title: "Our Brands", href: "/products?category=brands" },
+  { title: "Wireless Devices", href: "/products?category=wireless" },
+  { title: "Structured Cabling", href: "/products?category=cabling" },
+  { title: "Fibre Optic Solutions", href: "/products?category=fibre" },
+  { title: "Security Cameras", href: "/products?category=security" },
+  { title: "PBX + Phones", href: "/products?category=pbx" },
 ];
 
 export function Header() {
