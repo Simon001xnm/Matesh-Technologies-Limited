@@ -9,6 +9,9 @@ import { Button } from "@/components/ui/button"
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import {
@@ -38,6 +41,12 @@ export function MobileNav({ mainNavItems }: MobileNavProps) {
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="pr-0">
+        <SheetHeader className="sr-only">
+          <SheetTitle>Mobile Navigation Menu</SheetTitle>
+          <SheetDescription>
+            Main navigation links for Matesh Technologies.
+          </SheetDescription>
+        </SheetHeader>
         <Link
           href="/"
           className="mr-6 flex items-center space-x-2 px-4" // Added padding for logo
@@ -58,7 +67,7 @@ export function MobileNav({ mainNavItems }: MobileNavProps) {
             {mainNavItems?.map((item, index) => (
               <AccordionItem value={`item-${index}`} key={item.title}>
                 <AccordionTrigger className="text-lg font-medium hover:no-underline">
-                   <Link href={item.href || '#'} onClick={() => setOpen(false)}>{item.title}</Link>
+                   <Link href={item.href || '#'} onClick={() => item.children ? undefined : setOpen(false)}>{item.title}</Link>
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="flex flex-col space-y-2 pl-4">
