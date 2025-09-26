@@ -76,9 +76,12 @@ const mainNavItems: NavItem[] = [
     title: "PBX + Phones", 
     href: "/products?category=pbx",
     children: [
-        { title: "IP Phones", href: "/products?category=ip-phones" },
-        { title: "PBX Systems", href: "/products?category=pbx-systems" },
-        { title: "Headsets", href: "/products?category=headsets" },
+        { title: "Yeastar PBX System", href: "/products?category=yeastar-pbx-system" },
+        { title: "Yealink IP Phones", href: "/products?category=yealink-ip-phones" },
+        { title: "Fanvil IP Phones", href: "/products?category=fanvil-ip-phones" },
+        { title: "Panasonic PBX", href: "/products?category=panasonic-pbx" },
+        { title: "Panasonic Phones", href: "/products?category=panasonic-phones" },
+        { title: "Grandstream", href: "/products?category=grandstream" },
     ]
   },
 ];
