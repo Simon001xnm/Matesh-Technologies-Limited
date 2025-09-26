@@ -8,6 +8,7 @@ export interface NavItem {
   icon?: LucideIcon;
   label?: string;
   description?: string;
+  children?: NavItem[]; // Added for sub-menus
 }
 
 export interface Product {
