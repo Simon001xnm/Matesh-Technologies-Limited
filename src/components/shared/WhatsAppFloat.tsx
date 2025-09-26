@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from 'next/link';
@@ -24,7 +23,7 @@ export default function WhatsAppFloat() {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-11 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-transform duration-300 ease-in-out hover:scale-110 flex items-center justify-center space-x-2"
+      className="fixed bottom-16 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-transform duration-300 ease-in-out hover:scale-110 flex items-center justify-center space-x-2"
       aria-label="Chat on WhatsApp"
     >
       <WhatsAppIcon />
