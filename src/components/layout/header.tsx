@@ -45,8 +45,10 @@ const mainNavItems: NavItem[] = [
     href: "/products?category=cabling",
     children: [
         { title: "Ethernet Cables", href: "/products?category=ethernet-cables" },
-        { title: "Patch Panels", href: "/products?category=patch-panels" },
-        { title: "Keystone Jacks", href: "/products?category=keystone-jacks" },
+        { title: "Network Cabinets", href: "/products?category=network-cabinets" },
+        { title: "Media Converters", href: "/products?category=media-converters" },
+        { title: "POE Injectors", href: "/products?category=poe-injectors" },
+        { title: "Cabinet Shelves", href: "/products?category=cabinet-shelves" },
     ]
   },
   { 
