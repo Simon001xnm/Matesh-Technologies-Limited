@@ -31,7 +31,7 @@ export function MainNav({ items }: MainNavProps) {
             <NavigationMenuItem key={item.title}>
               {item.children ? (
                 <>
-                  <Link href={item.href || "#"} legacyBehavior passHref>
+                  <Link href={item.href || "#"} passHref>
                     <NavigationMenuTrigger className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
                       {item.title}
                     </NavigationMenuTrigger>
