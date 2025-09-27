@@ -31,9 +31,11 @@ export function MainNav({ items }: MainNavProps) {
             <NavigationMenuItem key={item.title}>
               {item.children ? (
                 <>
-                  <NavigationMenuTrigger className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
-                    <Link href={item.href || "#"}>{item.title}</Link>
-                  </NavigationMenuTrigger>
+                  <Link href={item.href || "#"} legacyBehavior passHref>
+                    <NavigationMenuTrigger className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+                      {item.title}
+                    </NavigationMenuTrigger>
+                  </Link>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                       {item.children.map((child) => (
