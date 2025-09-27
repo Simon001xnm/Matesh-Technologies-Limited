@@ -45,7 +45,7 @@ export function ProductCard({ product }: ProductCardProps) {
       </Link>
       <CardContent className="p-4 flex-grow">
         <Link href={`/products/${product.id}`} className="block">
-          <CardTitle className="text-lg font-semibold hover:text-primary transition-colors">
+          <CardTitle className="text-base lg:text-lg font-semibold hover:text-primary transition-colors">
             {product.name}
           </CardTitle>
         </Link>
@@ -61,7 +61,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <span className="ml-1 text-xs text-muted-foreground">({product.reviewCount} reviews)</span>
           </div>
         )}
-        <p className="text-xl font-bold text-primary mt-3">KSH {product.price.toFixed(2)}</p>
+        <p className="text-lg lg:text-xl font-bold text-primary mt-3">KSH {product.price.toFixed(2)}</p>
       </CardContent>
       <CardFooter className="p-4 border-t flex flex-col gap-2">
         <AddToCartButton product={product} />

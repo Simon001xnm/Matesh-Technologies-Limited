@@ -1,3 +1,4 @@
+
 "use client"
 
 import { CartItemCard } from "@/components/cart/cart-item";
@@ -27,14 +28,16 @@ export default function CartPage() {
         <EmptyCart />
       ) : (
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-start">
-          <div className="lg:col-span-2 space-y-4 bg-card p-6 rounded-lg shadow-sm border">
-            <div className="flex justify-between items-center mb-4">
+          <div className="lg:col-span-2 space-y-4 bg-card p-4 sm:p-6 rounded-lg shadow-sm border">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-4">
                 <h2 className="text-xl font-semibold">Cart Items ({items.reduce((acc, item) => acc + item.quantity, 0)})</h2>
                 <Button variant="outline" size="sm" onClick={clearCart} className="text-destructive hover:text-destructive/80">Clear Cart</Button>
             </div>
-            {items.map((item) => (
-              <CartItemCard key={item.productId} item={item} />
-            ))}
+            <div className="space-y-4">
+              {items.map((item) => (
+                <CartItemCard key={item.productId} item={item} />
+              ))}
+            </div>
           </div>
           <div className="lg:col-span-1">
             <CartSummary />

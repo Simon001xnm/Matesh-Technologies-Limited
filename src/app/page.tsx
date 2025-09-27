@@ -47,18 +47,18 @@ export default function HomePage() {
 
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-8 sm:py-12">
       <section className="text-center">
-        <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl md:text-5xl">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary">
           Welcome to Matesh Technologies
         </h1>
-        <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
+        <p className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl leading-8 text-muted-foreground max-w-2xl lg:max-w-4xl mx-auto">
           We're experts in Telecommunication, Networking and Security systems; automatic gates, Biometric systems installations, Closed Circuit televisions cameras (CCTVS), Business Branding.
 We sale: Fiber & wireless accessories; Tension Clamps, UPBs, Downleads, buckles, steel straps, ATBs, fiber and Ethernet patchcords, Routers, access points.
 Place your first order and score a big discount, for more info ☎️
 0701694469 / 0797880510
         </p>
-        <div className="mt-10 flex items-center justify-center gap-x-6">
+        <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4">
           <Button asChild size="lg">
             <Link href="/products">
               Shop Products <ArrowRight className="ml-2 h-5 w-5" />
@@ -77,19 +77,19 @@ Place your first order and score a big discount, for more info ☎️
         </div>
       </section>
 
-      <section id="featured-products" className="py-16 sm:py-24">
-        <h2 className="text-3xl font-bold tracking-tight text-center mb-12">Featured Products</h2>
-        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+      <section id="featured-products" className="py-12 sm:py-16 md:py-24">
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-8 sm:mb-12">Featured Products</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-6 md:gap-8">
           {featuredProducts.map((product) => (
             <div key={product.id} className="group relative rounded-lg border p-4 shadow-sm hover:shadow-md transition-shadow">
-              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
+              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 h-48 sm:h-60">
                 <Image
                   data-ai-hint={getCategoryHint(product.category)}
                   src={product.imageUrl}
                   alt={product.name}
                   width={400}
                   height={400}
-                  className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
               <div className="mt-4 flex justify-between">
@@ -109,9 +109,9 @@ Place your first order and score a big discount, for more info ☎️
         </div>
       </section>
 
-      <section id="categories" className="py-16 sm:py-24 bg-muted rounded-lg">
-        <h2 className="text-3xl font-bold tracking-tight text-center mb-12">Shop by Category</h2>
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 container">
+      <section id="categories" className="py-12 sm:py-16 md:py-24 bg-muted rounded-lg">
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-8 sm:mb-12">Shop by Category</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 gap-4 md:gap-6 container">
           {categoryDisplayOrder.map((category) => (
              <Link href={`/products?category=${encodeURIComponent(category.toLowerCase().replace(/ /g, '-'))}`} key={category} className="group block">
               <div className="aspect-square w-full overflow-hidden rounded-lg bg-card shadow-sm group-hover:shadow-lg transition-shadow">
@@ -124,7 +124,7 @@ Place your first order and score a big discount, for more info ☎️
                   className="h-full w-full object-cover object-center"
                 />
               </div>
-              <h3 className="mt-3 text-center text-md font-medium text-foreground group-hover:text-primary transition-colors">{category}</h3>
+              <h3 className="mt-3 text-center text-sm sm:text-md font-medium text-foreground group-hover:text-primary transition-colors">{category}</h3>
             </Link>
           ))}
         </div>

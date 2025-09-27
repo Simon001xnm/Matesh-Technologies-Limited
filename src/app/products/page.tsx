@@ -1,3 +1,4 @@
+
 import { ProductCard } from "@/components/products/product-card";
 import { ProductFilters, ProductSortDropdown } from "@/components/products/product-filters";
 import { placeholderProducts } from "@/lib/placeholder-data";
@@ -12,14 +13,14 @@ export default function ProductsPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <header className="mb-8 text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-primary">Our Products</h1>
-        <p className="mt-2 text-lg text-muted-foreground">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">Our Products</h1>
+        <p className="mt-2 text-base sm:text-lg text-muted-foreground">
           Browse our extensive collection of networking and fiber optic accessories.
         </p>
       </header>
 
       <div className="mb-8">
-        <div className="relative">
+        <div className="relative max-w-lg mx-auto">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input 
             type="search" 
@@ -32,12 +33,12 @@ export default function ProductsPage() {
       <div className="flex flex-col lg:flex-row gap-8">
         <ProductFilters />
         <main className="flex-1">
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
             <p className="text-sm text-muted-foreground">{products.length} products found</p>
             <ProductSortDropdown />
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

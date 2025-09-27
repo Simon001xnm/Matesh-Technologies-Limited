@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -14,7 +15,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu" // Assuming you create this component
+} from "@/components/ui/navigation-menu"
 
 interface MainNavProps {
   items?: NavItem[]
@@ -30,30 +31,30 @@ export function MainNav({ items }: MainNavProps) {
           {items?.map((item) => (
             <NavigationMenuItem key={item.title}>
               {item.children ? (
-                <>
-                  <Link href={item.href || "#"} passHref>
-                    <NavigationMenuTrigger className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
-                      {item.title}
-                    </NavigationMenuTrigger>
-                  </Link>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                      {item.children.map((child) => (
-                        <ListItem
-                          key={child.title}
-                          title={child.title}
-                          href={child.href || "#"}
-                        />
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </>
+                <Link href={item.href || "#"} passHref>
+                  <NavigationMenuTrigger className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+                    {item.title}
+                  </NavigationMenuTrigger>
+                </Link>
               ) : (
                 <Link href={item.href || "#"} legacyBehavior passHref>
                   <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
                     {item.title}
                   </NavigationMenuLink>
                 </Link>
+              )}
+               {item.children && (
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    {item.children.map((child) => (
+                      <ListItem
+                        key={child.title}
+                        title={child.title}
+                        href={child.href || "#"}
+                      />
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
               )}
             </NavigationMenuItem>
           ))}
