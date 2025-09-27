@@ -6,6 +6,7 @@ import { MobileNav } from "@/components/layout/mobile-nav"
 import { UserNav } from "@/components/layout/user-nav"
 import { ThemeToggle } from "@/components/shared/theme-toggle"
 import type { NavItem } from "@/types"
+import { TopBar } from "./top-bar";
 
 const mainNavItems: NavItem[] = [
   { 
@@ -89,6 +90,7 @@ const mainNavItems: NavItem[] = [
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <TopBar />
       <div className="container flex h-20 md:h-28 max-w-screen-2xl items-center">
         <MobileNav mainNavItems={mainNavItems} />
         <div className="flex items-center flex-shrink-0 mr-6">
