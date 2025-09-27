@@ -21,6 +21,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Matesh Technologies Accessories',
   description: 'Fiber and Networking Accessories Shop',
+  icons: {
+    icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-XbLRyutGuhzXVlWYm2gppY3nmShsDtXkHqxJsl41HxvEBlznLXeHDBBBGQIKl9tZry0&usqp=CAU',
+  },
 };
 
 export default function RootLayout({
