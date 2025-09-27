@@ -91,17 +91,21 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 md:h-28 max-w-screen-2xl items-center">
         <MobileNav mainNavItems={mainNavItems} />
-        <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Image 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-XbLRyutGuhzXVlWYm2gppY3nmShsDtXkHqxJsl41HxvEBlznLXeHDBBBGQIKl9tZry0&usqp=CAU" 
-            alt="Matesh Tech Logo" 
-            width={96}
-            height={96}
-            className="h-16 w-auto md:h-24"
-          />
-        </Link>
-        <MainNav items={mainNavItems} />
-        <div className="flex flex-1 items-center justify-end space-x-1 md:space-x-2">
+        <div className="flex items-center flex-shrink-0 mr-6">
+          <Link href="/" className="flex items-center space-x-2">
+            <Image 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-XbLRyutGuhzXVlWYm2gppY3nmShsDtXkHqxJsl41HxvEBlznLXeHDBBBGQIKl9tZry0&usqp=CAU" 
+              alt="Matesh Tech Logo" 
+              width={96}
+              height={96}
+              className="h-16 w-auto md:h-24"
+            />
+          </Link>
+        </div>
+        <div className="flex-grow flex justify-center">
+          <MainNav items={mainNavItems} />
+        </div>
+        <div className="flex items-center justify-end space-x-1 md:space-x-2">
           <ThemeToggle />
           <UserNav />
         </div>
