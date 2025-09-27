@@ -93,7 +93,7 @@ export function Header() {
         <MobileNav mainNavItems={mainNavItems} />
         <div className="flex items-center flex-shrink-0 mr-6">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="relative rounded-lg border-2 border-primary p-0.5 shadow-md">
+            <div className="relative rounded-lg border-2 border-primary p-0.5 shadow-lg shadow-primary/50 animate-border-glow">
               <Image 
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-XbLRyutGuhzXVlWYm2gppY3nmShsDtXkHqxJsl41HxvEBlznLXeHDBBBGQIKl9tZry0&usqp=CAU" 
                 alt="Matesh Tech Logo" 
