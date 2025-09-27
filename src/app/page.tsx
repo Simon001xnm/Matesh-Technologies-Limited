@@ -65,6 +65,11 @@ Place your first order and score a big discount, for more info ☎️
             </Link>
           </Button>
           <Button asChild variant="outline" size="lg">
+            <Link href="/about">
+              About Us
+            </Link>
+          </Button>
+          <Button asChild variant="outline" size="lg">
             <Link href="/#categories">
               Explore Categories
             </Link>
