@@ -5,13 +5,12 @@ import { ProductImageGallery } from "@/components/products/product-image-gallery
 import { ProductReviewSummary } from "@/components/products/product-review-summary";
 import { AddToCartButton } from "@/components/products/add-to-cart-button";
 import { AddToWishlistButton } from "@/components/products/add-to-wishlist-button";
-import { ContactSupplierDialog } from "@/components/products/contact-supplier-dialog";
 import { OrderViaWhatsAppButton } from "@/components/products/OrderViaWhatsAppButton"; // New import
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { AlertCircle, ChevronLeft, Tag, Truck, MessageSquare } from "lucide-react";
+import { AlertCircle, ChevronLeft, Tag } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -83,29 +82,12 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             </div>
             <OrderViaWhatsAppButton productName={product.name} className="w-full" />
           </div>
-           {product.supplierName && product.supplierId && (
-            <ContactSupplierDialog
-              productName={product.name}
-              supplierName={product.supplierName}
-              trigger={
-                <Button variant="outline" className="w-full md:w-auto mb-6">
-                  <MessageSquare className="mr-2 h-4 w-4" /> Contact Supplier
-                </Button>
-              }
-            />
-          )}
           
           <div className="space-y-3 text-sm">
             <div className="flex items-center">
               <Tag className="h-5 w-5 mr-2 text-muted-foreground" />
               <span>Category: <Link href={`/products?category=${product.category}`} className="text-primary hover:underline">{product.category}</Link></span>
             </div>
-            {product.supplierName && (
-            <div className="flex items-center">
-              <Truck className="h-5 w-5 mr-2 text-muted-foreground" />
-              <span>Sold by: <Link href={`/suppliers/${product.supplierId}`} className="text-primary hover:underline">{product.supplierName}</Link></span>
-            </div>
-            )}
             <div className="flex items-center">
               <span className={`h-3 w-3 rounded-full mr-2 ${product.stock > 0 ? 'bg-green-500' : 'bg-red-500'}`}></span>
               <span>{product.stock > 0 ? `${product.stock} in stock` : "Out of stock"}</span>

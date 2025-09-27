@@ -24,8 +24,6 @@ export interface Product {
   rating?: number;
   reviewCount?: number;
   reviews?: Review[];
-  supplierId: string;
-  supplierName?: string; // Denormalized for easier display
   brand?: string;
   specifications?: Record<string, string>;
 }
