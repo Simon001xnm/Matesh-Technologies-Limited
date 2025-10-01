@@ -82,20 +82,11 @@ export default {
   				to: {
   					height: '0'
   				}
-  			},
-        'border-glow': {
-          '0%, 100%': {
-            boxShadow: '0 0 5px hsl(var(--primary)), 0 0 10px hsl(var(--primary))'
-          },
-          '50%': {
-            boxShadow: '0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary))'
-          }
-        }
+  			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out',
-        'border-glow': 'border-glow 4s ease-in-out infinite'
+  			'accordion-up': 'accordion-up 0.2s ease-out'
   		}
   	}
   },
