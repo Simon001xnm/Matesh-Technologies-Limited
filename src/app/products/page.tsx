@@ -1,4 +1,5 @@
 
+
 import { ProductCard } from "@/components/products/product-card";
 import { ProductFilters, ProductSortDropdown } from "@/components/products/product-filters";
 import { placeholderProducts, placeholderCategories } from "@/lib/placeholder-data";
@@ -44,9 +45,9 @@ export default function ProductsPage({ searchParams }: ProductsPageProps) {
 
   // Category filter
   if (category) {
-      const categoryName = placeholderCategories.find(c => c.slug === category)?.name || category;
-      filteredProducts = filteredProducts.filter(
-          product => product.category.toLowerCase().replace(/ /g, '-') === categoryName.toLowerCase().replace(/ /g, '-')
+      const categorySlugs = category.split(',');
+      filteredProducts = filteredProducts.filter(product => 
+        categorySlugs.includes(product.category.toLowerCase().replace(/ /g, '-'))
       );
   }
 
@@ -96,7 +97,7 @@ export default function ProductsPage({ searchParams }: ProductsPageProps) {
   const brandOptions = getBrandOptions(placeholderProducts);
 
   const createPageURL = (pageNumber: number | string) => {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams.toString());
     params.set('page', pageNumber.toString());
     return `/products?${params.toString()}`;
   };
