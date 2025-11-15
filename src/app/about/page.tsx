@@ -3,9 +3,30 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, Building, Users, Target } from "lucide-react";
+import { ChevronLeft, Building, Users, Target, Wrench } from "lucide-react";
 
 export default function AboutPage() {
+  const projects = [
+    {
+      title: "Corporate Office Network Overhaul",
+      description: "Complete fiber optic and structured cabling installation for a 5-story office building, enhancing network speed and reliability.",
+      imageUrl: "https://picsum.photos/seed/project1/600/400",
+      hint: "office network"
+    },
+    {
+      title: "Residential Estate CCTV & Fiber",
+      description: "Deployed a comprehensive security camera system and fiber-to-the-home (FTTH) network for a gated community of over 100 homes.",
+      imageUrl: "https://picsum.photos/seed/project2/600/400",
+      hint: "security cctv"
+    },
+    {
+      title: "Industrial Warehouse Wireless Bridge",
+      description: "Established a long-range point-to-point wireless bridge to connect two warehouses, enabling seamless data transfer over 5km.",
+      imageUrl: "https://picsum.photos/seed/project3/600/400",
+      hint: "warehouse wireless"
+    }
+  ];
+
   return (
     <div className="container mx-auto px-4 py-8 sm:py-12">
       <div className="mb-6 sm:mb-8">
@@ -26,6 +47,7 @@ export default function AboutPage() {
       <div className="grid md:grid-cols-2 gap-8 items-center mb-12 sm:mb-16">
         <div>
           <Image
+            data-ai-hint="company team"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCmQjd46gqs_3FS03MmBUMF48PQ-lO-CQaTA&s"
             alt="Matesh Technologies Team or Office"
             width={600}
@@ -82,6 +104,34 @@ export default function AboutPage() {
           </CardContent>
         </Card>
       </div>
+
+      <section className="mb-12 sm:mb-16">
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-8 sm:mb-12">Our Recent Projects</h2>
+        <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+          {projects.map((project) => (
+            <Card key={project.title} className="shadow-lg hover:shadow-xl transition-shadow overflow-hidden flex flex-col">
+              <div className="aspect-video w-full">
+                <Image
+                  data-ai-hint={project.hint}
+                  src={project.imageUrl}
+                  alt={project.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="text-lg sm:text-xl">{project.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-muted-foreground text-sm sm:text-base">
+                  {project.description}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
 
       <section className="text-center py-10 sm:py-12 bg-muted rounded-lg">
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-6">Why Choose Matesh Technologies?</h2>
