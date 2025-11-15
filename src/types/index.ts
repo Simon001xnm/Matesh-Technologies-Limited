@@ -28,21 +28,6 @@ export interface Product {
   specifications?: Record<string, string>;
 }
 
-export interface Supplier {
-  id: string;
-  name: string;
-  description: string;
-  logoUrl: string;
-  bannerUrl?: string;
-  contactEmail?: string;
-  website?: string;
-  rating?: number;
-  reviewCount?: number;
-  reviews?: Review[];
-  isVerified?: boolean; // Added for Verified Supplier badge
-  // products list might be fetched separately or as part of a detailed supplier view
-}
-
 export interface Review {
   id: string;
   author: string;
@@ -51,7 +36,6 @@ export interface Review {
   comment: string;
   date: string; // ISO date string
   productId?: string;
-  supplierId?: string;
 }
 
 export interface CartItem {

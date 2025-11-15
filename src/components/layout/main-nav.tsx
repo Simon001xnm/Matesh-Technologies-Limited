@@ -31,30 +31,37 @@ export function MainNav({ items }: MainNavProps) {
           {items?.map((item) => (
             <NavigationMenuItem key={item.title}>
               {item.children ? (
-                <Link href={item.href || "#"} passHref>
+                <>
                   <NavigationMenuTrigger className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
                     {item.title}
                   </NavigationMenuTrigger>
-                </Link>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                       {item.href && (
+                         <li className="md:col-span-2">
+                           <Link href={item.href} legacyBehavior passHref>
+                              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "font-semibold text-primary justify-start w-full")}>
+                                View All {item.title}
+                              </NavigationMenuLink>
+                            </Link>
+                         </li>
+                       )}
+                      {item.children.map((child) => (
+                        <ListItem
+                          key={child.title}
+                          title={child.title}
+                          href={child.href || "#"}
+                        />
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </>
               ) : (
                 <Link href={item.href || "#"} legacyBehavior passHref>
                   <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
                     {item.title}
                   </NavigationMenuLink>
                 </Link>
-              )}
-               {item.children && (
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                    {item.children.map((child) => (
-                      <ListItem
-                        key={child.title}
-                        title={child.title}
-                        href={child.href || "#"}
-                      />
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
               )}
             </NavigationMenuItem>
           ))}

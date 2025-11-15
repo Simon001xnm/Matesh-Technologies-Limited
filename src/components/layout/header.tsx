@@ -29,7 +29,7 @@ const mainNavItems: NavItem[] = [
   },
   { 
     title: "Wireless Devices", 
-    href: "/products?category=wireless",
+    href: "/products?category=wireless-devices",
     children: [
         { title: "Wireless Outdoor CPE", href: "/products?category=wireless-outdoor-cpe" },
         { title: "Wireless Access Points", href: "/products?category=wireless-access-points" },
@@ -43,7 +43,7 @@ const mainNavItems: NavItem[] = [
   },
   { 
     title: "Structured Cabling", 
-    href: "/products?category=cabling",
+    href: "/products?category=structured-cabling",
     children: [
         { title: "Ethernet Cables", href: "/products?category=ethernet-cables" },
         { title: "Network Cabinets", href: "/products?category=network-cabinets" },
@@ -54,7 +54,7 @@ const mainNavItems: NavItem[] = [
   },
   { 
     title: "Fibre Optic Solutions", 
-    href: "/products?category=fibre",
+    href: "/products?category=fibre-optic-solutions",
     children: [
         { title: "Fiber Optic Cables", href: "/products?category=fiber-optic-cables" },
         { title: "Fibre Optic Bare PLC Splitters", href: "/products?category=fibre-optic-bare-plc-splitters" },
@@ -66,7 +66,7 @@ const mainNavItems: NavItem[] = [
   },
   { 
     title: "Security Cameras", 
-    href: "/products?category=security",
+    href: "/products?category=security-cameras",
     children: [
         { title: "IP Cameras", href: "/products?category=ip-cameras" },
         { title: "NVRs", href: "/products?category=nvrs" },
@@ -75,7 +75,7 @@ const mainNavItems: NavItem[] = [
   },
   { 
     title: "PBX + Phones", 
-    href: "/products?category=pbx",
+    href: "/products?category=pbx-phones",
     children: [
         { title: "Yeastar PBX System", href: "/products?category=yeastar-pbx-system" },
         { title: "Yealink IP Phones", href: "/products?category=yealink-ip-phones" },
@@ -101,7 +101,7 @@ export function Header() {
                 alt="Matesh Tech Logo" 
                 width={96}
                 height={96}
-                className="h-16 w-auto md:h-24 rounded-md"
+                className="h-16 w-auto md:h-24"
                 priority
               />
             </div>

@@ -2,23 +2,53 @@
 import type { Product, Supplier, Review, Category, CartItem } from "@/types";
 
 export const placeholderCategories: Category[] = [
-  { id: "cat1", name: "Fiber Cables", slug: "fiber-cables", imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/07/Simplex-SC-APC-9-125-Single-mode-Fiber-Optic-Pigtail-400x400.jpg" },
-  { id: "cat2", name: "Connectors", slug: "connectors", imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/07/Fast_connector_SC_APC-removebg-preview-1.png" },
-  { id: "cat3", name: "Adapters", slug: "adapters", imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2024/07/1_e82d820a-ede1-4d97-8bd4-a39a657ff22b-400x400.webp" },
-  { id: "cat4", name: "Patch Panels", slug: "patch-panels", imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/08/atb-with-2pcs-Lc-upc-pigtails-and-2pcs-lc-upc-duplex-adapter-400x202.png" }, // Using ATB image
-  { id: "cat5", name: "Networking Tools", slug: "networking-tools", imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2024/10/fibertool-kit-400x400.jpg" },
-  { id: "cat6", name: "SFP Modules", slug: "sfp-modules", imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/07/BARE-SPLITTER-0.5MM-1-400x350.png" }, // Using Bare Splitter image
-  { id: "cat7", name: "Media Converters", slug: "media-converters", imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/08/atb-with-2pcs-Lc-upc-pigtails-and-2pcs-lc-upc-duplex-adapter-400x202.png" }, // Using ATB image
-  { id: "cat8", name: "Cable Management", slug: "cable-management", imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/08/ADSS-J-Hook-400x400.jpg" },
-  { id: "cat9", name: "Testers", slug: "testers", imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/07/Splicing-Machine-AI-9-Signal-Fire-400x400.jpg" }, // Using Splicing Machine image
-  { id: "cat10", name: "Enclosures", slug: "enclosures", imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/08/atb-with-2pcs-Lc-upc-pigtails-and-2pcs-lc-upc-duplex-adapter-400x202.png" } // Using ATB image
+  { id: "cat1", name: "Fiber Optic Cables", slug: "fiber-optic-cables" },
+  { id: "cat2", name: "Connectors", slug: "connectors" },
+  { id: "cat3", name: "Adapters", slug: "adapters" },
+  { id: "cat4", name: "Patch Panels", slug: "patch-panels" },
+  { id: "cat5", name: "Networking Tools", slug: "networking-tools" },
+  { id: "cat6", name: "SFP Modules", slug: "sfp-modules" },
+  { id: "cat7", name: "Media Converters", slug: "media-converters" },
+  { id: "cat8", name: "Cable Management", slug: "cable-management" },
+  { id: "cat9", name: "Testers", slug: "testers" },
+  { id: "cat10", name: "Enclosures", slug: "enclosures" },
+  { id: "cat11", name: "Wireless Devices", slug: "wireless-devices" },
+  { id: "cat12", name: "Structured Cabling", slug: "structured-cabling" },
+  { id: "cat13", name: "Security Cameras", slug: "security-cameras" },
+  { id: "cat14", name: "PBX + Phones", slug: "pbx-phones" },
+  { id: "cat15", name: "Our Brands", slug: "brands" },
+  { id: "cat16", name: "Wireless Outdoor CPE", slug: "wireless-outdoor-cpe"},
+  { id: "cat17", name: "Wireless Access Points", slug: "wireless-access-points"},
+  { id: "cat18", name: "Routers", slug: "routers"},
+  { id: "cat19", name: "Network Switches", slug: "network-switches"},
+  { id: "cat20", name: "Range Extenders", slug: "range-extenders"},
+  { id: "cat21", name: "USB Wifi Adapters", slug: "usb-wifi-adapters"},
+  { id: "cat22", name: "Point to point", slug: "point-to-point"},
+  { id: "cat23", name: "Antennas", slug: "antennas"},
+  { id: "cat24", name: "Ethernet Cables", slug: "ethernet-cables"},
+  { id: "cat25", name: "Network Cabinets", slug: "network-cabinets"},
+  { id: "cat26", name: "POE Injectors", slug: "poe-injectors"},
+  { id: "cat27", name: "Cabinet Shelves", slug: "cabinet-shelves"},
+  { id: "cat28", name: "Fibre Optic Bare PLC Splitters", slug: "fibre-optic-bare-plc-splitters"},
+  { id: "cat29", name: "Fiber Optic Enclosures", slug: "fiber-optic-enclosures"},
+  { id: "cat30", name: "Fast Connectors", slug: "fast-connectors"},
+  { id: "cat31", name: "Fiber Patch cords & Pigtails", slug: "fiber-patch-cords-pigtails"},
+  { id: "cat32", name: "Optical Distribution Frames", slug: "optical-distribution-frames"},
+  { id: "cat33", name: "IP Cameras", slug: "ip-cameras"},
+  { id: "cat34", name: "NVRs", slug: "nvrs"},
+  { id: "cat35", name: "Camera Accessories", slug: "camera-accessories"},
+  { id: "cat36", name: "Yeastar PBX System", slug: "yeastar-pbx-system"},
+  { id: "cat37", name: "Yealink IP Phones", slug: "yealink-ip-phones"},
+  { id: "cat38", name: "Fanvil IP Phones", slug: "fanvil-ip-phones"},
+  { id: "cat39", name: "Panasonic PBX", slug: "panasonic-pbx"},
+  { id: "cat40", name: "Panasonic Phones", slug: "panasonic-phones"},
+  { id: "cat41", name: "Grandstream", slug: "grandstream"},
 ];
 
 export const placeholderReviews: Review[] = [
   { id: "rev1", author: "Alice Smith", rating: 5, comment: "Excellent SC/APC connector, very high quality!", date: "2023-05-15T10:00:00Z", productId: "prod1", avatarUrl: "https://placehold.co/40x40.png?user=alice" },
   { id: "rev2", author: "Bob Johnson", rating: 4, comment: "Good value for this fast connector.", date: "2023-05-20T14:30:00Z", productId: "prod1", avatarUrl: "https://placehold.co/40x40.png?user=bob" },
   { id: "rev3", author: "Carol Williams", rating: 3, comment: "Decent pigtail, but a bit stiff.", date: "2023-06-01T09:15:00Z", productId: "prod2", avatarUrl: "https://placehold.co/40x40.png?user=carol" },
-  { id: "rev4", author: "David Brown", rating: 5, comment: "Supplier was very helpful and shipping was fast.", date: "2023-06-05T11:00:00Z", supplierId: "sup1", avatarUrl: "https://placehold.co/40x40.png?user=david" },
   { id: "rev5", author: "Eve Davis", rating: 2, comment: "This SC/APC connector (Type B) didn't fit well.", date: "2023-06-10T16:45:00Z", productId: "prod3", avatarUrl: "https://placehold.co/40x40.png?user=eve" },
 ];
 
@@ -45,7 +75,7 @@ export const placeholderProducts: Product[] = [
     description: "9/125 Single mode simplex fiber optic pigtail with SC/APC connector.",
     longDescription: "High-quality simplex SC/APC single mode (9/125µm) fiber optic pigtail. Ideal for splicing applications in ODF, patch panels, and fiber optic distribution frames. Standard 0.9mm buffer diameter.",
     price: 50,
-    category: "Fiber Cables",
+    category: "Fiber Optic Cables",
     imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/07/Simplex-SC-APC-9-125-Single-mode-Fiber-Optic-Pigtail-400x400.jpg",
     images: ["https://ctcsolutions.co.ke/wp-content/uploads/2021/07/Simplex-SC-APC-9-125-Single-mode-Fiber-Optic-Pigtail-400x400.jpg"],
     stock: 250,
@@ -77,7 +107,7 @@ export const placeholderProducts: Product[] = [
     description: "Durable outdoor fiber optic drop cable, 2km length.",
     longDescription: "Self-supporting outdoor drop cable designed for aerial and duct installations. Features a robust construction to withstand harsh environmental conditions. Ideal for last-mile FTTx connectivity. Sold per 2km spool.",
     price: 11000,
-    category: "Fiber Cables",
+    category: "Fiber Optic Cables",
     imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/10/drop-cable-2km-400x352.jpg",
     images: ["https://ctcsolutions.co.ke/wp-content/uploads/2021/10/drop-cable-2km-400x352.jpg"],
     stock: 30,
@@ -109,7 +139,7 @@ export const placeholderProducts: Product[] = [
     description: "Fiber optic patch cord, LC/UPC to SC/UPC connectors, simplex/duplex.",
     longDescription: "High-quality fiber optic patch cord for connecting network devices. Features LC/UPC on one end and SC/UPC on the other. Available in simplex or duplex configurations and various lengths.",
     price: 150,
-    category: "Fiber Cables",
+    category: "Fiber Optic Cables",
     imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/07/fibre-patch-cord-lc-upc-sc-upc-400x328.jpg",
     images: ["https://ctcsolutions.co.ke/wp-content/uploads/2021/07/fibre-patch-cord-lc-upc-sc-upc-400x328.jpg"],
     stock: 350,
@@ -157,7 +187,7 @@ export const placeholderProducts: Product[] = [
     description: "Standard SC/UPC single mode simplex fiber optic pigtail.",
     longDescription: "Reliable simplex SC/UPC single mode fiber optic pigtail for various telecommunication applications. Features low insertion loss and excellent durability. Suitable for fusion splicing.",
     price: 50,
-    category: "Fiber Cables",
+    category: "Fiber Optic Cables",
     imageUrl: "https://ctcsolutions.co.ke/wp-content/uploads/2021/07/Simplex-SC-UPC-Single-Mode-Fiber-Optic-Pigtail-400x400.jpg",
     images: ["https://ctcsolutions.co.ke/wp-content/uploads/2021/07/Simplex-SC-UPC-Single-Mode-Fiber-Optic-Pigtail-400x400.jpg"],
     stock: 280,
@@ -905,49 +935,12 @@ export const placeholderProducts: Product[] = [
   }
 ];
 
-export const placeholderSuppliers: Supplier[] = [
-  {
-    id: "sup1",
-    name: "OptiConnect Solutions",
-    description: "Leading provider of high-quality fiber optic components and solutions for telecommunications and data centers.",
-    logoUrl: "https://placehold.co/150x150.png?text=OptiConnect+Logo",
-    bannerUrl: "https://placehold.co/1200x300.png?text=OptiConnect+Banner",
-    contactEmail: "sales@opticonnect.com",
-    website: "https://opticonnect.com",
-    rating: 4.2,
-    reviewCount: 1,
-    reviews: placeholderReviews.filter(r => r.supplierId === "sup1"),
-    isVerified: true, // OptiConnect is now a verified supplier
-  },
-  {
-    id: "sup2",
-    name: "NetBuild Essentials",
-    description: "Your trusted source for networking tools, equipment, and accessories for professionals and DIYers.",
-    logoUrl: "https://placehold.co/150x150.png?text=NetBuild+Logo",
-    bannerUrl: "https://placehold.co/1200x300.png?text=NetBuild+Banner",
-    contactEmail: "info@netbuild.com",
-    website: "https://netbuild.com",
-    rating: 4.0,
-    reviewCount: 0,
-    reviews: [],
-    isVerified: false,
-  },
-];
-
 export const placeholderCartItems: CartItem[] = [];
 
 export function getProductById(id: string): Product | undefined {
   return placeholderProducts.find(p => p.id === id);
 }
 
-export function getSupplierById(id: string): Supplier | undefined {
-  return placeholderSuppliers.find(s => s.id === id);
-}
-
-export function getProductsBySupplierId(supplierId: string): Product[] {
-  return placeholderProducts.filter(p => p.brand === "Ubiquiti");
-}
-
-export function getAllSuppliers(): Supplier[] {
-  return placeholderSuppliers;
+export function getAllSuppliers(): never[] {
+  return [];
 }
