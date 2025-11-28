@@ -7,6 +7,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/toaster";
 import WhatsAppFloat from '@/components/shared/WhatsAppFloat'; // <-- Import
+import { HolidayPopup } from '@/components/shared/HolidayPopup';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -46,6 +47,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <WhatsAppFloat /> {/* <-- Add component here */}
+          <HolidayPopup />
           <Toaster />
         </ThemeProvider>
       </body>
