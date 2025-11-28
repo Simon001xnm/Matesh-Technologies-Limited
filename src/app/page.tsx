@@ -56,25 +56,30 @@ export default function HomePage() {
     <div className="container mx-auto px-4 py-8 sm:py-12">
       <section 
         className="relative text-center bg-cover bg-center rounded-lg overflow-hidden py-20 px-4 mb-12"
-        style={{backgroundImage: "url('https://picsum.photos/seed/christmas/1200/400')"}}
+        style={{backgroundImage: "url('https://picsum.photos/seed/business/1200/400')"}}
       >
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         <div className="relative z-10">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-lg">
-            Merry Christmas from Matesh Tech!
+            Welcome to Matesh Technologies
           </h1>
-          <p className="mt-4 sm:mt-6 text-lg lg:text-xl leading-8 text-gray-200 max-w-2xl lg:max-w-4xl mx-auto">
-            Find the perfect tech gifts this holiday season. Unbeatable deals on routers, accessories, and more to keep you connected.
+          <p className="mt-4 sm:mt-6 text-base lg:text-lg leading-7 text-gray-200 max-w-2xl lg:max-w-4xl mx-auto">
+            We're experts in Telecommunication, Networking and Security systems; automatic gates, Biometric systems installations, Closed Circuit televisions cameras (CCTVS), Business Branding. We sale: Fiber & wireless accessories; Tension Clamps, UPBs, Downleads, buckles, steel straps, ATBs, fiber and Ethernet patchcords, Routers, access points. Place your first order and score a big discount, for more info ☎️ 0701694469 / 0797880510
           </p>
           <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg">
               <Link href="/products">
-                Shop Holiday Deals <ShoppingCart className="ml-2 h-5 w-5" />
+                Shop Products
               </Link>
             </Button>
             <Button asChild variant="secondary" size="lg" className="shadow-lg">
               <Link href="/about">
                 About Us
+              </Link>
+            </Button>
+             <Button asChild variant="outline" size="lg" className="shadow-lg">
+              <Link href="#categories">
+                Explore Categories
               </Link>
             </Button>
           </div>
