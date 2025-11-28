@@ -2,8 +2,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import { placeholderProducts } from '@/lib/placeholder-data'; // Import placeholderProducts
+import { ArrowRight, ShoppingCart } from 'lucide-react';
+import { placeholderProducts } from '@/lib/placeholder-data';
+import { ProductCard } from '@/components/products/product-card';
 
 // Mapping of category names to specific image URLs from your product list
 const categoryImages: Record<string, string> = {
@@ -35,6 +36,11 @@ const categoryDisplayOrder = [
 export default function HomePage() {
   const featuredProducts = placeholderProducts.slice(0, 4); // Get the first 4 products for features section
 
+  const holidayDeals = placeholderProducts
+    .filter(p => p.category === 'Routers')
+    .sort((a, b) => a.price - b.price)
+    .slice(0, 4);
+
   // Helper function to generate a concise hint from category (max 2 words)
   const getCategoryHint = (categoryName: string): string => {
     if (!categoryName) return "product";
@@ -48,32 +54,41 @@ export default function HomePage() {
 
   return (
     <div className="container mx-auto px-4 py-8 sm:py-12">
-      <section className="text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary">
-          Welcome to Matesh Technologies
-        </h1>
-        <p className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl leading-8 text-muted-foreground max-w-2xl lg:max-w-4xl mx-auto">
-          We're experts in Telecommunication, Networking and Security systems; automatic gates, Biometric systems installations, Closed Circuit televisions cameras (CCTVS), Business Branding.
-We sale: Fiber & wireless accessories; Tension Clamps, UPBs, Downleads, buckles, steel straps, ATBs, fiber and Ethernet patchcords, Routers, access points.
-Place your first order and score a big discount, for more info ☎️
-0701694469 / 0797880510
-        </p>
-        <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Button asChild size="lg">
-            <Link href="/products">
-              Shop Products <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-          <Button asChild variant="outline" size="lg">
-            <Link href="/about">
-              About Us
-            </Link>
-          </Button>
-          <Button asChild variant="outline" size="lg">
-            <Link href="/#categories">
-              Explore Categories
-            </Link>
-          </Button>
+      <section 
+        className="relative text-center bg-cover bg-center rounded-lg overflow-hidden py-20 px-4 mb-12"
+        style={{backgroundImage: "url('https://picsum.photos/seed/christmas/1200/400')"}}
+      >
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div className="relative z-10">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-lg">
+            Merry Christmas from Matesh Tech!
+          </h1>
+          <p className="mt-4 sm:mt-6 text-lg lg:text-xl leading-8 text-gray-200 max-w-2xl lg:max-w-4xl mx-auto">
+            Find the perfect tech gifts this holiday season. Unbeatable deals on routers, accessories, and more to keep you connected.
+          </p>
+          <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg">
+              <Link href="/products">
+                Shop Holiday Deals <ShoppingCart className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button asChild variant="secondary" size="lg" className="shadow-lg">
+              <Link href="/about">
+                About Us
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="holiday-deals" className="py-12 sm:py-16 md:py-24 bg-red-50 dark:bg-red-900/20 rounded-lg">
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-center mb-8 sm:mb-12 text-primary">
+          Santa's Router Deals 🎅
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {holidayDeals.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
       </section>
 
@@ -81,30 +96,7 @@ Place your first order and score a big discount, for more info ☎️
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-8 sm:mb-12">Featured Products</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-6 md:gap-8">
           {featuredProducts.map((product) => (
-            <div key={product.id} className="group relative rounded-lg border p-4 shadow-sm hover:shadow-md transition-shadow">
-              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 h-48 sm:h-60">
-                <Image
-                  data-ai-hint={getCategoryHint(product.category)}
-                  src={product.imageUrl}
-                  alt={product.name}
-                  width={400}
-                  height={400}
-                  className="h-full w-full object-cover object-center"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-foreground">
-                    <Link href={`/products/${product.id}`}>
-                      <span aria-hidden="true" className="absolute inset-0" />
-                      {product.name}
-                    </Link>
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{product.category}</p>
-                </div>
-                <p className="text-sm font-medium text-primary">KSH {product.price.toFixed(2)}</p>
-              </div>
-            </div>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>
