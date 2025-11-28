@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { ShoppingCart } from 'lucide-react';
 
 const POPUP_SEEN_KEY = 'holidayPopupSeen';
@@ -29,6 +29,12 @@ export function HolidayPopup() {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="p-0 border-primary border-2 max-w-md overflow-hidden">
+        <DialogHeader className="sr-only">
+          <DialogTitle>Santa's Router Deals Have Arrived!</DialogTitle>
+          <DialogDescription>
+            Don't miss out on our biggest sale of the year. Get the best prices on top-rated routers and accessories.
+          </DialogDescription>
+        </DialogHeader>
         <div className="relative">
           <Image
             src="https://picsum.photos/seed/holiday-ad/600/300"
