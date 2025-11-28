@@ -1,9 +1,8 @@
-
 import { Mail, MapPin, Phone } from "lucide-react";
 
 export function TopBar() {
   return (
-    <div className="bg-primary text-primary-foreground text-xs md:text-sm py-2 px-4 border-b overflow-hidden">
+    <div className="bg-primary text-primary-foreground text-xs md:text-sm py-2 px-4 overflow-hidden">
       <div className="relative flex items-center">
          <div className="animate-marquee whitespace-nowrap flex items-center gap-x-6">
             <span className="font-semibold">🎄 MERRY CHRISTMAS SALE! 🎁 Unbeatable deals on all networking gear!</span>

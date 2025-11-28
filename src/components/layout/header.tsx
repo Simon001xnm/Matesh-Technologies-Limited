@@ -1,4 +1,3 @@
-
 import Link from "next/link"
 import Image from "next/image";
 import { MainNav } from "@/components/layout/main-nav"
@@ -89,7 +88,7 @@ const mainNavItems: NavItem[] = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-black text-white backdrop-blur supports-[backdrop-filter]:bg-black/60">
       <TopBar />
       <div className="container flex h-20 md:h-28 max-w-screen-2xl items-center">
         <MobileNav mainNavItems={mainNavItems} />
