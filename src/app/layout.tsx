@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/toaster";
 import WhatsAppFloat from '@/components/shared/WhatsAppFloat'; // <-- Import
 import { HolidayPopup } from '@/components/shared/HolidayPopup';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -50,6 +51,7 @@ export default function RootLayout({
           <HolidayPopup />
           <Toaster />
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
